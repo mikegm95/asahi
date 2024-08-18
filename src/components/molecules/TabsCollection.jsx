@@ -1,5 +1,6 @@
+import PropTypes from "prop-types";
 import { forwardRef } from "react";
-import { Grid, Tab, Tabs } from "@mui/material";
+import { Tab, Tabs } from "@mui/material";
 
 function a11yProps(index) {
   return {
@@ -9,17 +10,28 @@ function a11yProps(index) {
 }
 
 const TabsCollection = forwardRef(function TabsCollection(props, ref) {
-  const { tabElements } = props;
+  const { tabElements, value = 0, handleChangeTab, ...others } = props;
 
   return (
-    <Grid container>
-      <Tabs>
-        {tabElements.map((item, index) => (
-          <Tab label={item?.label} {...a11yProps(index)} key={index} />
-        ))}
-      </Tabs>
-    </Grid>
+    <Tabs
+      value={value}
+      onChange={handleChangeTab}
+      indicatorColor="primary"
+      textColor="primary"
+      variant="fullWidth"
+      {...others}
+    >
+      {tabElements.map((item, index) => (
+        <Tab label={item?.label} {...a11yProps(index)} key={index} />
+      ))}
+    </Tabs>
   );
 });
 
 export default TabsCollection;
+
+TabsCollection.propTypes = {
+  tabElements: PropTypes.array,
+  value: PropTypes.number,
+  handleChangeTab: PropTypes.func,
+};
