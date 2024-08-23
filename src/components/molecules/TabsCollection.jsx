@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { forwardRef } from "react";
-import { Tab, Tabs } from "@mui/material";
+import { Tab, Tabs, Grid } from "@mui/material";
 
 function a11yProps(index) {
   return {
@@ -13,18 +13,20 @@ const TabsCollection = forwardRef(function TabsCollection(props, ref) {
   const { tabElements, value = 0, handleChangeTab, ...others } = props;
 
   return (
-    <Tabs
-      value={value}
-      onChange={handleChangeTab}
-      indicatorColor="primary"
-      textColor="primary"
-      variant="fullWidth"
-      {...others}
-    >
-      {tabElements.map((item, index) => (
-        <Tab label={item?.label} {...a11yProps(index)} key={index} />
-      ))}
-    </Tabs>
+    <Grid container>
+      <Tabs
+        value={value}
+        onChange={handleChangeTab}
+        indicatorColor="primary"
+        textColor="primary"
+        variant="fullWidth"
+        {...others}
+      >
+        {tabElements.map((item, index) => (
+          <Tab label={item?.label} {...a11yProps(index)} key={index} />
+        ))}
+      </Tabs>
+    </Grid>
   );
 });
 

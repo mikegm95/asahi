@@ -1,19 +1,21 @@
 // src/theme/typography.js
 const typography = {
   fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  h1: {
-    fontSize: "2rem",
-    fontWeight: 600,
+  regular16: {
+    fontSize: 16,
+    fontWeight: 400,
   },
-  h2: {
-    fontSize: "1.75rem",
-    fontWeight: 500,
+  regular20: {
+    fontSize: 20,
+    fontWeight: 400,
   },
-  body1: {
-    fontSize: "1rem",
+  bold16: {
+    fontSize: 16,
+    fontWeight: 700,
   },
-  button: {
-    textTransform: "none", // Disable uppercase text on buttons
+  bold20: {
+    fontSize: 20,
+    fontWeight: 700,
   },
 };
 

@@ -15,10 +15,6 @@ function Header() {
           >
             GameShark
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
-          <Button color="primary">Login</Button>
         </Toolbar>
       </AppBar>
     </Box>
